@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<header>
+  <div class="highlight-box">
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </div>
+    <div class="title-block">
+      <h1>Tuklas — Find & Download Worksheets</h1>
+      <p class="lead">Free Math, English, Filipino & Science worksheets. Add your own links, search, preview and download.</p>
+    </div>
+  </div>
+</header>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+header {
+  grid-column: 1/3;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers the content block */
+  gap: 18px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)); /* blue background */
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(42, 110, 178, 0.25);
+  padding: 20px 30px;
+  margin-bottom: 20px;
+}
+
+/* Main header background (light blue section at top) */
+header {
+  grid-column: 1/3;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #2a6eb2, #5aa9e6);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(42, 110, 178, 0.25);
+  padding: 40px 30px;
+  margin-bottom: 20px;
+}
+
+/* Inner highlight box */
+.highlight-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: white;
+  border-radius: 16px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Logo styling */
+.logo {
+  flex: 0 0 auto;
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Title and subtitle block */
+.title-block {
+  flex: 1;
+  text-align: center;
+}
+
+.title-block h1 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.title-block p.lead {
+  margin: 4px 0 0 0;
+  color: #333;
+  opacity: 0.9;
+}
+
+
+/* Keep logo on the left, text still centered visually */
+.logo {
+  flex: 0 0 auto; /* keeps logo from stretching */
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  background: white; /* white circle around logo for contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Text block in the center */
+header div:nth-of-type(2) {
+  flex: 1;
+  text-align: center;
+  color: white; /* make text white for contrast on blue */
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+p.lead {
+  margin: 4px 0 0 0;
+  opacity: 0.9;
+  color: blue;
+}
+
+
+    :root{
+      --bg:#e9f3fb;    
+      --card:#e9f3fb; 
+      --accent:#2a6eb2; 
+      --accent-2:#5aa9e6;       
+      --muted:#2c3e50;
+      --success:#2ecc71;
+      --danger:#e74c3c;
+      --glass: rgba(255,255,255,0.6);
+      --radius:14px;
+      font-synthesis: none;
+    }
+
+.logo{
+  width:72px;
+  height:72px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  box-shadow:0 6px 18px rgba(42,110,178,0.3);
+}
+.logo svg {
+  width:38px;
+  height:38px;
+}
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Nunito', system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg),#f3ebe0);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:28px;
+    }
+
+    .app{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap:20px;
+      align-items:start;
+    }
+
+    header{grid-column:1/3; display:flex; align-items:center; gap:18px}
+    .logo{
+      width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(139,107,75,0.16)
+    }
+    h1{margin:0;font-size:20px}
+    p.lead{margin:0;color:#5b4a3f;opacity:0.9}
+
+    /* Main column */
+    .main{padding:18px;background:var(--glass);border-radius:var(--radius);backdrop-filter:blur(4px);box-shadow:0 6px 24px rgba(0,0,0,0.06)}
+
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+    .search{flex:1;display:flex}
+    .search input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid rgba(107,89,74,0.12);outline:none}
+
+    select, .btn{padding:10px 12px;border-radius:10px;border:1px solid rgba(107,89,74,0.12);background:white}
+    .btn{cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+
+    .card{background:linear-gradient(180deg,white,#fbf7f4);padding:12px;border-radius:12px;border:1px solid rgba(107,89,74,0.06);box-shadow:0 6px 18px rgba(107,89,74,0.05)}
+    .card h3{margin:0 0 6px 0;font-size:16px;color:var(--accent)}
+    .meta{font-size:13px;color:#7a6352;margin-bottom:8px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(139,107,75,0.06);color:var(--accent);}
+
+    .card .actions{display:flex;gap:8px}
+    .download{flex:1}
+
+    /* Sidebar */
+    .sidebar{padding:18px;background:var(--card);border-radius:var(--radius);box-shadow:0 8px 24px rgba(107,89,74,0.06)}
+    .sidebar h2{margin-top:0}
+    label{display:block;margin-top:10px;font-size:13px;color:#5b4a3f}
+    input[type=text], input[type=url], select, textarea{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(107,89,74,0.12);margin-top:6px}
+    textarea{min-height:80px}
+
+    .small{font-size:13px;color:#6b594a}
+
+    footer{grid-column:1/3;margin-top:18px;text-align:center;color:#6c5b4b}
+
+    /* Buttons */
+    .btn{background:linear-gradient(180deg,var(--accent-2),var(--accent));color:white;border:none}
+    .btn.secondary{background:white;color:var(--accent);border:1px solid rgba(107,89,74,0.08)}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(107,89,74,0.06)}
+
+    /* interactive ripple */
+    .ripple{position:relative;overflow:hidden}
+    .ripple:after{content:'';position:absolute;border-radius:50%;transform:scale(0);opacity:0.6;pointer-events:none}
+    .ripple:active:after{transform:scale(6);transition:transform 0.6s, opacity 1s;opacity:0}
+
+    /* responsive */
+    @media (max-width:980px){
+      .app{grid-template-columns:1fr;}
+      header{flex-direction:column;align-items:flex-start}
+    }
+
+    /* modal preview */
+    .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,10,10,0.48);z-index:60;}
+    .modal-content{width:90%;max-width:900px;background:white;border-radius:12px;overflow:hidden}
+    .modal .top{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid #efe6dd}
+    .iframe-wrap{height:72vh}
+
+    .muted{color:#6b594a}
+  </style>
+</head>
+<body>
+
+  <div class="app">
+
+    
+    <main class="main">
+
+      <div class="controls">
+        <div class="search">
+          <input id="q" placeholder="Search by title, grade, or keyword..." aria-label="Search worksheets">
+        </div>
+
+        <select id="filter-subject" aria-label="Filter subject">
+          <option value="all">All Subjects</option>
+          <option value="Math">Math</option>
+          <option value="English">English</option>
+          <option value="Filipino">Filipino</option>
+          <option value="Science">Science</option>
+        </select>
+
+        <button id="btn-new" class="btn secondary ripple">+ Add</button>
+      </div>
+
+      <section>
+        <div id="grid" class="grid" aria-live="polite">
+          <!-- Cards inserted here -->
+        </div>
+      </section>
+
+      <div style="margin-top:14px;display:flex;gap:8px;align-items:center">
+        <button id="export" class="btn ghost ripple">Export collection</button>
+        <button id="import" class="btn ghost ripple">Import collection</button>
+        <input id="file-input" type="file" accept="application/json" style="display:none">
+        <span class="small muted" style="margin-left:auto">Worksheets are saved locally in your browser (localStorage). You can export to share.</span>
+      </div>
+
+    </main>
+
+    <aside class="sidebar">
+      <h2>Add / Edit Worksheet</h2>
+      <form id="form">
+        <label>Title <input type="text" id="title" required placeholder="e.g. Fraction practice - Grade 4"></label>
+        <label>Subject
+          <select id="subject">
+            <option>Math</option>
+            <option>English</option>
+            <option>Filipino</option>
+            <option>Science</option>
+          </select>
+        </label>
+        <label>Grade <input type="text" id="grade" placeholder="e.g. Grade 4 / Grade 7 / HS"></label>
+        <label>Tags <input type="text" id="tags" placeholder="comma-separated e.g. fractions,review"></label>
+        <label>Worksheet URL <input type="url" id="url" placeholder="https://your-school.org/worksheet.pdf" required></label>
+        <label>Description <textarea id="desc" placeholder="Short note (optional)"></textarea></label>
+
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button type="submit" class="btn ripple">Save worksheet</button>
+          <button type="button" id="clear" class="btn secondary ripple">Clear</button>
+        </div>
+
+        <input type="hidden" id="editing-id">
+      </form>
+
+      <hr style="margin:12px 0;border:none;border-top:1px solid rgba(107,89,74,0.06)">
+
+      <div>
+        <h3 style="margin:0">Tips</h3>
+        <ul class="small">
+          <li>Add direct links to PDF or image files so students can download immediately.</li>
+          <li>Use "Export" to save the collection as JSON and share with other teachers.</li>
+          <li>Worksheets are saved in your browser — to move devices, export then import.</li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <footer>
+      Made for learners • Tuklas
+    </footer>
+
+  </div>
+
+  <!-- Modal preview -->
+  <div id="modal" class="modal" style="display:none">
+    <div class="modal-content">
+      <div class="top">
+        <strong id="modal-title"></strong>
+        <div>
+          <button id="modal-download" class="btn ripple">Download</button>
+          <button id="modal-close" class="btn secondary ripple">Close</button>
+        </div>
+      </div>
+      <div class="iframe-wrap" id="iframeWrap">
+        <!-- iframe goes here for pdf preview if allowed by the URL -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tuklas: client-side single-file app
+    const STORAGE_KEY = 'tuklas_worksheets_v1'
+
+    // Elements
+    const grid = document.getElementById('grid')
+    const q = document.getElementById('q')
+    const filter = document.getElementById('filter-subject')
+    const form = document.getElementById('form')
+    const btnNew = document.getElementById('btn-new')
+    const exportBtn = document.getElementById('export')
+    const importBtn = document.getElementById('import')
+    const fileInput = document.getElementById('file-input')
+    const demoBtn = document.getElementById('demo')
+
+    // Modal
+    const modal = document.getElementById('modal')
+    const modalTitle = document.getElementById('modal-title')
+    const iframeWrap = document.getElementById('iframeWrap')
+    const modalClose = document.getElementById('modal-close')
+    const modalDownload = document.getElementById('modal-download')
+
+    // Form fields
+    const editingId = document.getElementById('editing-id')
+    const titleInput = document.getElementById('title')
+    const subjectInput = document.getElementById('subject')
+    const gradeInput = document.getElementById('grade')
+    const tagsInput = document.getElementById('tags')
+    const urlInput = document.getElementById('url')
+    const descInput = document.getElementById('desc')
+    const clearBtn = document.getElementById('clear')
+
+    // Utilities
+    const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,6)
+
+    function save(data){ localStorage.setItem(STORAGE_KEY, JSON.stringify(data)) }
+    function load(){ try {return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []} catch(e){return []} }
+
+    // render
+    function render(){
+      const items = load()
+      const query = q.value.trim().toLowerCase()
+      const sub = filter.value
+
+      const filtered = items.filter(it=>{
+        if(sub!=='all' && it.subject!==sub) return false
+        if(!query) return true
+        const hay = (it.title + ' ' + (it.grade||'') + ' ' + (it.tags||'') + ' ' + (it.description||'')).toLowerCase()
+        return hay.includes(query)
+      })
+
+      grid.innerHTML = ''
+      if(filtered.length===0){
+        grid.innerHTML = '<div class="muted">No worksheets found. Try "Load sample items" or add your own.</div>'
+        return
+      }
+
+      filtered.forEach(item=>{
+        const el = document.createElement('article')
+        el.className = 'card'
+        el.innerHTML = `
+          <h3>${escapeHtml(item.title)}</h3>
+          <div class="meta">${escapeHtml(item.subject)} • ${escapeHtml(item.grade || '')}</div>
+          <div class="tags">${(item.tags||'').split(',').filter(Boolean).map(t=>' <span class="tag">'+escapeHtml(t.trim())+'</span>').join('')}</div>
+          <div class="small">${escapeHtml(item.description || '')}</div>
+          <div style="height:8px"></div>
+          <div class="actions">
+            <button class="btn download ripple" data-id="${item.id}">Preview</button>
+            <a class="btn secondary ripple" href="${escapeAttr(item.url)}" target="_blank" rel="noopener noreferrer" download>Open / Download</a>
+            <button class="btn ghost ripple" data-edit="${item.id}">Edit</button>
+            <button class="btn ghost ripple" data-del="${item.id}">Delete</button>
+          </div>
+        `
+        grid.appendChild(el)
+      })
+    }
+
+    // escape helpers
+    function escapeHtml(s){ if(!s) return ''; return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;') }
+    function escapeAttr(s){ if(!s) return ''; return s.replaceAll('"','&quot;').replaceAll("'","&#39;") }
+
+    // Add / Save
+    form.addEventListener('submit', e=>{
+      e.preventDefault()
+      const items = load()
+      const id = editingId.value || uid()
+      const payload = { id, title: titleInput.value.trim() || 'Untitled', subject: subjectInput.value, grade: gradeInput.value.trim(), tags: tagsInput.value.trim(), url: urlInput.value.trim(), description: descInput.value.trim() }
+
+      const idx = items.findIndex(x=>x.id===id)
+      if(idx>=0) items[idx] = payload
+      else items.unshift(payload)
+      save(items)
+      form.reset(); editingId.value=''
+      render()
+      showToast('Saved')
+    })
+
+    // interactions: edit / delete / preview
+    grid.addEventListener('click', e=>{
+      const editId = e.target.closest('[data-edit]')?.getAttribute('data-edit')
+      const delId = e.target.closest('[data-del]')?.getAttribute('data-del')
+      const previewId = e.target.closest('[data-id]')?.getAttribute('data-id')
+
+      if(editId){ editItem(editId); return }
+      if(delId){ if(confirm('Delete this worksheet?')){ deleteItem(delId)} return }
+      if(previewId){ openPreview(previewId); return }
+    })
+
+    function editItem(id){
+      const items = load(); const it = items.find(x=>x.id===id); if(!it) return
+      editingId.value = it.id
+      titleInput.value = it.title
+      subjectInput.value = it.subject
+      gradeInput.value = it.grade || ''
+      tagsInput.value = it.tags || ''
+      urlInput.value = it.url || ''
+      descInput.value = it.description || ''
+      window.scrollTo({top:0,behavior:'smooth'})
+    }
+
+    function deleteItem(id){
+      const items = load().filter(x=>x.id!==id); save(items); render(); showToast('Deleted')
+    }
+
+    // preview modal
+    function openPreview(id){
+      const it = load().find(x=>x.id===id); if(!it) return
+      modalTitle.textContent = it.title
+      modalDownload.onclick = ()=>{ window.open(it.url, '_blank') }
+
+      iframeWrap.innerHTML = ''
+      // attempt to embed PDF into iframe if allowed
+      const url = it.url
+      if(url.match(/\.pdf($|\?)/i)){
+        const iframe = document.createElement('iframe')
+        iframe.src = url
+        iframe.style.width='100%'
+        iframe.style.height='100%'
+        iframeWrap.appendChild(iframe)
+      } else {
+        iframeWrap.innerHTML = '<div style="padding:20px">Preview not available — open or download to view the file.</div>'
+      }
+
+      modal.style.display = 'flex'
+    }
+
+    modalClose.addEventListener('click', ()=>{ modal.style.display='none'; iframeWrap.innerHTML='' })
+    modal.addEventListener('click', e=>{ if(e.target===modal) modalClose.click() })
+
+    // quick new: focus form
+    btnNew.addEventListener('click', ()=>{ titleInput.focus(); window.scrollTo({top:0,behavior:'smooth'}) })
+
+    // demo sample items
+    demoBtn.addEventListener('click', ()=>{
+      const sample = [
+        { id: uid(), title:'Fractions practice — Grade 4', subject:'Math', grade:'Grade 4', tags:'fractions,review', url:'https://cdn.mozilla.net/pdfjs/tracemonkey.pdf', description:'Multiply & divide fractions (sample PDF).'},
+        { id: uid(), title:'Reading comprehension — Grade 6', subject:'English', grade:'Grade 6', tags:'reading,comprehension', url:'https://www.orimi.com/pdf-test.pdf', description:'Short passages with questions.'},
+        { id: uid(), title:'Filipino vocabulary match — Grade 3', subject:'Filipino', grade:'Grade 3', tags:'vocabulary', url:'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', description:'Vocabulary matching worksheet.'},
+        { id: uid(), title:'Human body parts review — Grade 5', subject:'Science', grade:'Grade 5', tags:'biology', url:'https://cdn.mozilla.net/pdfjs/tracemonkey.pdf', description:'Label the parts activity.'}
+      ]
+      save(sample); render(); showToast('Loaded sample items')
+    })
+
+    // search/filter handlers
+    q.addEventListener('input', debounce(render,250))
+    filter.addEventListener('change', render)
+
+    // clear
+    clearBtn.addEventListener('click', ()=>{ form.reset(); editingId.value=''; showToast('Cleared') })
+
+    // export/import
+    exportBtn.addEventListener('click', ()=>{
+      const items = load(); const blob = new Blob([JSON.stringify(items, null, 2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'tuklas-worksheets.json'; a.click(); URL.revokeObjectURL(url);
+    })
+
+    importBtn.addEventListener('click', ()=> fileInput.click())
+    fileInput.addEventListener('change', e=>{
+      const f = e.target.files[0]; if(!f) return; const reader = new FileReader();
+      reader.onload = ev=>{
+        try{ const data = JSON.parse(ev.target.result); if(Array.isArray(data)){ save(data); render(); showToast('Imported'); } else throw new Error('Invalid'); }
+        catch(err){ alert('Invalid JSON file') }
+      }
+      reader.readAsText(f)
+    })
+
+    // small toast
+    function showToast(msg){
+      const t = document.createElement('div'); t.textContent = msg; t.style.position='fixed'; t.style.right='20px'; t.style.bottom='20px'; t.style.padding='10px 14px'; t.style.background='var(--accent)'; t.style.color='white'; t.style.borderRadius='8px'; t.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; t.style.zIndex=9999; document.body.appendChild(t)
+      setTimeout(()=>{ t.style.transition='opacity 400ms'; t.style.opacity=0; setTimeout(()=>t.remove(),450) }, 1400)
+    }
+
+    // delete all confirmation (hidden; for dev) - NOT wired to ui for safety
+    function deleteAll(){ if(confirm('Delete ALL?')){ save([]); render(); }}
+
+    // helpers
+    function debounce(fn, ms=200){ let t; return function(...a){ clearTimeout(t); t=setTimeout(()=>fn.apply(this,a),ms) } }
+
+    // initialize with any existing data or an empty message
+    (function init(){ if(!localStorage.getItem(STORAGE_KEY)){ /* leave empty until user adds or loads demo */ }
+      render()
+    })()
+
+    // accessibility: keyboard support for Enter on grid buttons
+    grid.addEventListener('keydown', e=>{
+      if(e.key==='Enter' && e.target.matches('button')) e.target.click()
+    })
+  </script>
+</body>
+</html>
